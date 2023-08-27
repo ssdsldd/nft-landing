@@ -6,10 +6,12 @@ import { theme } from "../../style/Theme";
 
 export const Logo: React.FC = () => {
     return(
-        <FlexWrapper>
-            <Icon iconId="logo"/>
-            <LogoText>Creative<LogoSubtext>art</LogoSubtext></LogoText>
-        </FlexWrapper>
+        <LogoLink>
+            <FlexWrapper>
+                    <Icon iconId="logo"/>
+                    <LogoText>Creative<LogoSubtext>art</LogoSubtext></LogoText>
+            </FlexWrapper>
+        </LogoLink>
     )
 }
 
@@ -24,4 +26,8 @@ const LogoText = styled.span`
 
 const LogoSubtext = styled.span`
     color: ${theme.colors.accent};
+`
+
+const LogoLink = styled.a`
+
 `

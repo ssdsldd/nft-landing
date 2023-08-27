@@ -9,13 +9,13 @@ const menuItems = [
     },
 
     {
-        itemName: 'Artists',
-        href: 'artists'
+        itemName: 'Community',
+        href: 'community'
     },
 
     {
-        itemName: 'Community',
-        href: 'community'
+        itemName: 'Artists',
+        href: 'artists'
     },
 
     {
@@ -41,7 +41,8 @@ export const Menu: React.FC = () => {
 }
 
 export const MenuNav = styled.nav`
-    
+    display: flex;
+    align-items: center;
 `
 
     
