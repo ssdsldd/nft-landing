@@ -10,6 +10,7 @@ import ownerImg2 from "../../assets/popular/owner2.webp";
 import ownerImg3 from "../../assets/popular/owner3.webp";
 import ownerImg4 from "../../assets/popular/owner4.webp";
 import ownerImg5 from "../../assets/popular/owner5.webp";
+import { ArtistsCard } from "./ArtistCard";
 
 
 const artistsItems = [
@@ -49,11 +50,21 @@ const artistsItems = [
 export const ArtistsGrid: React.FC = () => {
     return(
         <StyledAGrid>
-            
+            {artistsItems.map((item, index) => {
+                return (
+                    <ArtistsCard    srcBg={item.srcBg}
+                                    srcProfile={item.srcProfile}
+                                    name={item.name}
+                                    key={index}/>
+                )
+            })}
         </StyledAGrid>
     )
 }
 
 const StyledAGrid = styled.div`
-    
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 300px 80px 410px 410px;
+    grid-template-rows: repeat(2, 1fr);
 `

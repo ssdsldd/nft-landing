@@ -32,5 +32,5 @@ const ArtistsTitle = styled(Title)`
 `
 
 const ArtistsFlex = styled(FlexWrapper)`
-    
+    margin-bottom: 64px;
 `
