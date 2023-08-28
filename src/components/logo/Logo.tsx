@@ -22,6 +22,9 @@ const LogoText = styled.span`
     font-weight: 500;
     line-height: 120%;
     margin: 14px 0 0 8px;
+    @media ${theme.media.tablet}{
+        margin: 0px 0 0 8px;
+    }
 `
 
 const LogoSubtext = styled.span`
@@ -29,5 +32,5 @@ const LogoSubtext = styled.span`
 `
 
 const LogoLink = styled.a`
-
+    z-index: 9999;
 `

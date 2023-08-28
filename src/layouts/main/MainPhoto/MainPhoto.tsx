@@ -3,14 +3,18 @@ import styled from "styled-components";
 import mainPhoto from "../../../assets/main/main1.webp"
 import { Icon } from "../../../components/icon/Icon";
 import { MainPhotoCard } from "./MainPhotoCard";
+import { theme } from "../../../style/Theme";
 
 export const MainPhoto: React.FC = () => {
     return(
         <StyledMainPhoto>
             <MainPhotoImg src={mainPhoto}/>
-            <MainPhotoicon>
+            <MainPhotoiconBig>
                 <Icon iconId="main" width="171" height="171" viewbox="0 0 171 171"/>
-            </MainPhotoicon>
+            </MainPhotoiconBig>
+            <MainPhotoiconSmall>
+                <Icon iconId="smallStar" width="82" height="82" viewbox="0 0 82 82"/>
+            </MainPhotoiconSmall>
             <MainPhotoCard/>
             <MainBigBg/>
             <MainSmallBg/>
@@ -31,11 +35,28 @@ const MainPhotoImg = styled.img`
     border-radius: 24px;
 `
 
-const MainPhotoicon = styled.div`
+const MainPhotoiconBig = styled.div`
     position: absolute;
     top: 222px;
     left: -60px;
     z-index: 2;
+
+
+    @media ${theme.media.desktopForCards}{
+        display: none;
+    }
+`
+
+const MainPhotoiconSmall = styled.div`
+    position: absolute;
+    top: 174px;
+    left: -30px;
+    z-index: 2;
+    display: none;
+
+    @media ${theme.media.desktopForCards}{
+        display: block;
+    }
 `
 
 const MainBigBg = styled.div`
@@ -58,4 +79,7 @@ const MainSmallBg = styled.div`
     z-index: -3;
     bottom: -146px;
     right: -110px;
+    @media ${theme.media.desktopBg}{
+        display: none;
+    }
 `

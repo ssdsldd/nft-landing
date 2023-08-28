@@ -5,6 +5,7 @@ import { Logo } from "../../components/logo/Logo";
 import { Menu } from "./menu/Menu";
 import styled from "styled-components";
 import { Button } from "../../components/Button";
+import { theme } from "../../style/Theme";
 
 export const Header: React.FC = () => {
     return(
@@ -22,6 +23,11 @@ export const Header: React.FC = () => {
 
 const StyledHeader = styled.header`
     padding: 28px 0;
+    ${Button}{
+        @media ${theme.media.desktop}{
+            display: none;
+        }
+    }
 `
 
 

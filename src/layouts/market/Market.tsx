@@ -82,4 +82,8 @@ const MarketArtsBg = styled.div`
     right: -165px;
     background:  #1F413D;
     filter: blur(175px);
+
+    @media ${theme.media.desktopBg}{
+        display: none;
+    }
 `

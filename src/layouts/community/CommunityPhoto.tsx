@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import img1 from "../../assets/create/create1.webp"
 import img2 from "../../assets/create/create2.webp"
+import { theme } from "../../style/Theme";
 
 export const CommunityPhoto: React.FC = () => {
     return(
@@ -52,4 +53,10 @@ const PhotosBg = styled.div`
     height: 128px;
     background: #1F413D;
     filter: blur(125px);
+    @media ${theme.media.desktopBg}{
+        width: 166px;
+        height: 83px; 
+        right: 0; 
+        bottom: -40px;
+    }
 `
