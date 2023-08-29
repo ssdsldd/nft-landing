@@ -15,6 +15,10 @@ export const MainContentButtons: React.FC = () => {
 
 const StyledMainContentButtons = styled.div`
     margin-bottom: 72px;
+    @media ${theme.media.desktop}{
+        justify-content: center;
+        margin-bottom: 0;
+    }
 `
 const MainContentLink = styled.a`
     font-size: 16px;

@@ -19,6 +19,11 @@ const Photos = styled.div`
     width: 740px;
     height: 560px;
     position: relative;
+
+    @media ${theme.media.tablet}{
+        width: 343px;
+        height: 260px;
+    }
 `
 
 const PhotosTop = styled.img`
@@ -31,6 +36,12 @@ const PhotosTop = styled.img`
     z-index: -1;
     border-radius: 24px;
     object-position: top;
+
+    @media ${theme.media.tablet}{
+        width: 190px;
+        height: 186px;
+        top: 74px;
+    }
 `
 const PhotosBottom = styled.img`
     position: absolute;
@@ -42,6 +53,11 @@ const PhotosBottom = styled.img`
     object-position: top;
     z-index: -2;
     border-radius: 24px;
+
+    @media ${theme.media.tablet}{
+        width: 190px;
+        height: 220px;
+    }
 `
 
 const PhotosBg = styled.div`
@@ -52,11 +68,17 @@ const PhotosBg = styled.div`
     width: 346px;
     height: 128px;
     background: #1F413D;
-    filter: blur(125px);
+    /* filter: blur(125px); */
     @media ${theme.media.desktopBg}{
+        display: none;
+    }
+
+    @media ${theme.media.tablet}{
+        display: block;
+        background-color: #fff;
         width: 166px;
-        height: 83px; 
-        right: 0; 
+        height: 83px;
         bottom: -40px;
+        right: 5px;
     }
 `

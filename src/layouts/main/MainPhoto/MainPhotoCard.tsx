@@ -44,6 +44,14 @@ const Card = styled.div`
     top: 468px;
     right: -50px;
     width: 304px;
+
+    @media ${theme.media.tablet}{
+        margin-right: 0px;
+        top: 295px;
+        right: -20px;
+        width: 224px;
+        padding: 12px;
+    }
 `
 const CardInfo = styled.div`
     color: ${theme.colors.accent};
@@ -51,7 +59,11 @@ const CardInfo = styled.div`
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 160%; /* 25.6px */
+    line-height: 160%;
+
+    @media ${theme.media.tablet}{
+        margin-bottom: 16px;
+    }
 `
 
 const CardTimer = styled.div`
@@ -61,6 +73,11 @@ const CardTimer = styled.div`
 const CardTimerTitle = styled.span`
     display: block;
     margin-bottom: 8px;
+
+    @media ${theme.media.tablet}{
+        font-size: 14px;
+    }
+    
 `
 
 const CardTimerValue = styled.span`

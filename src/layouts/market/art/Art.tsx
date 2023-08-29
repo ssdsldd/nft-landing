@@ -24,7 +24,9 @@ const CountdownRenderer: React.FC<CountdownRenderProps > = ({ hours, minutes, se
 export const MarketArt: React.FC<MarketArtProps> = (props: MarketArtProps) => {
     return(
         <Art>
-            <ArtImage src={props.src}/>
+            <ArtImageBox>
+                <ArtImage src={props.src}/> 
+            </ArtImageBox>
             <ArtMainInfo justify="space-between">
                 <ArtTitle>{props.title}</ArtTitle>
                 <ArtPriceBox gap="4px" align="center">
@@ -51,18 +53,36 @@ const Art = styled.div`
     border-top: 1px solid ${theme.colors.accent};
     background: #131E3A;
     padding: 20px;
+
+    @media ${theme.media.tablet}{
+        padding: 16px;
+        border-radius: 24px;
+    }
+`
+
+const ArtImageBox = styled.div`
+    overflow: hidden;
+    border-radius: 16px;
+    height: 340px;
 `
 
 const ArtImage = styled.img`
-    border-radius: 16px;
     width: 370px;
     height: 340px;
     object-fit: cover;
     object-position: top;
+
+    @media ${theme.media.tablet}{
+        width: 310px;
+        transform: scale(1.2) translateY(20px);
+        object-position: top;
+    }
 `
 
 const ArtTitle = styled.a`
-    
+    @media ${theme.media.tablet}{
+        font-size: 20px;
+    }
 `
 
 const ArtPrice = styled.span`

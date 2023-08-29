@@ -4,15 +4,16 @@ import { Container } from "../../components/Container";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { CommunityContent } from "./CommunityContent";
 import { CommunityPhoto } from "./CommunityPhoto";
+import { theme } from "../../style/Theme";
 
 export const Community: React.FC = () => {
     return(
         <StyledCommunity>
             <Container>
-                <FlexWrapper justify="space-between" align="center">
+                <StyledCommunityFlex justify="space-between" align="center" wrap="wrap" gap="48px">
                     <CommunityContent/>
                     <CommunityPhoto/>
-                </FlexWrapper>
+                </StyledCommunityFlex>
             </Container>
         </StyledCommunity>
     )
@@ -20,4 +21,10 @@ export const Community: React.FC = () => {
 
 const StyledCommunity = styled.section`
     
+`
+
+const StyledCommunityFlex = styled(FlexWrapper)`
+    @media ${theme.media.desktopForCards}{
+        justify-content: space-around;
+    }
 `

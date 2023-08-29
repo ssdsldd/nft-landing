@@ -21,7 +21,7 @@ const StatisticItems = [
 
 ]
 
-export const MainContentStatistic: React.FC = () => {
+export const MainContentStatisticMobile: React.FC = () => {
     return(
         <Statistic as={FlexWrapper} gap="94px">
                 {StatisticItems.map((item,index) => {
@@ -42,8 +42,16 @@ export const MainContentStatistic: React.FC = () => {
 const Statistic = styled.ul`
     list-style: none;
     text-align: start;
+    display: none;
+
+
     @media ${theme.media.desktop}{
-        display: none;
+        display: flex;
+        margin-top: 76px;
+    }
+
+    @media ${theme.media.tablet}{
+        gap: 28px;
     }
 `
 
@@ -65,6 +73,10 @@ const StatisticValue = styled.span`
     margin-bottom: 8px;
     span{
         color: ${theme.colors.font};
+    }
+
+    @media ${theme.media.tablet}{
+        font-size: 31px;
     }
 `
 

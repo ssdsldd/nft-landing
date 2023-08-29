@@ -25,6 +25,9 @@ export const MainPhoto: React.FC = () => {
 const StyledMainPhoto = styled.div`
     margin-right: 50px;
     position: relative;
+    @media ${theme.media.tablet}{
+        margin-right: 0px;
+    }
 `
 
 const MainPhotoImg = styled.img`
@@ -33,6 +36,12 @@ const MainPhotoImg = styled.img`
     object-fit: cover;
     object-position: top left;
     border-radius: 24px;
+    
+    @media ${theme.media.tablet}{
+        width: 294px;
+        height: 344px;
+        border-radius: 16px;
+    }
 `
 
 const MainPhotoiconBig = styled.div`
@@ -68,6 +77,14 @@ const MainBigBg = styled.div`
     z-index: -3;
     top: 158px;
     left: -336px;
+
+    @media ${theme.media.tablet}{
+        width: 120px;
+        height: 208px;
+        filter: blur(80px);
+        left: -45px;
+        bottom: -78px;
+    }
 `
 
 const MainSmallBg = styled.div`

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import bgImage from '../assets/bg.webp';
+import { theme } from "./Theme";
 
 
 export const GlobalStyles = createGlobalStyle`
@@ -40,6 +41,9 @@ export const GlobalStyles = createGlobalStyle`
 
   section{
     padding: 92px 0;
+    @media ${theme.media.tablet}{
+      padding: 40px 0;
+    }
   }
 
 `

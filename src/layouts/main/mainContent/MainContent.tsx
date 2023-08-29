@@ -21,6 +21,14 @@ export const MainContent: React.FC = () => {
 
 const StyledMainContent = styled.div`
     max-width: 544px;
+    @media ${theme.media.desktop}{
+        text-align: center;
+    }
+
+    @media ${theme.media.tablet}{
+        max-width: 343px;
+        padding-top: 20px;
+    }
 `
 
 const MainContnetTitle = styled.h1`
@@ -32,6 +40,9 @@ const MainContnetTitle = styled.h1`
     span{
         color: ${theme.colors.accent};
     }
+    @media ${theme.media.tablet}{
+        font-size: 39px;
+    }
 `
 
 const MainContnetText = styled.p`
@@ -39,6 +50,10 @@ const MainContnetText = styled.p`
     font-weight: 400;
     line-height: 160%;
     margin-bottom: 40px;
+
+    @media ${theme.media.tablet}{
+        margin-bottom: 32px;
+    }
 `
 
 

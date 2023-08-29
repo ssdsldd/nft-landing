@@ -39,9 +39,9 @@ export const Market: React.FC = () => {
             <Container>
                 <FlexWrapper justify="space-between" align="center">
                     <MarketTitle><span>Amazing</span> and Super <br /> Unique Art of This <span>Week</span></MarketTitle>
-                    <Button>See All</Button>
+                    <DesktopButton>See All</DesktopButton>
                 </FlexWrapper>
-                <MarketArts justify="space-between" gap="30px">
+                <MarketArts justify="space-around" gap="30px" wrap="wrap">
                     {artItems.map((item, index) => {
                         return(
                             <MarketArt  src={item.src}
@@ -53,6 +53,9 @@ export const Market: React.FC = () => {
                     })}
                     <MarketArtsBg></MarketArtsBg>
                 </MarketArts>
+                <MobileButton>
+                    See All
+                </MobileButton>
             </Container>
         </StyledMarket>
     )
@@ -71,6 +74,10 @@ const MarketTitle = styled(Title)`
 const MarketArts = styled(FlexWrapper)`
     margin-top: 64px;
     position: relative;
+
+    @media ${theme.media.tablet}{
+        margin-top: 32px;
+    }
 `
 
 const MarketArtsBg = styled.div`
@@ -85,5 +92,22 @@ const MarketArtsBg = styled.div`
 
     @media ${theme.media.desktopBg}{
         display: none;
+    }
+`
+
+const DesktopButton = styled(Button)`
+    @media ${theme.media.tablet}{
+        display: none;
+    }
+`
+
+const MobileButton = styled(Button)`
+    display: none;
+    margin: 0 auto;
+    max-width: 134px;
+    padding: 12px 0;
+    margin-top: 32px;
+    @media ${theme.media.tablet}{
+        display: block;
     }
 `

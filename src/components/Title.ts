@@ -7,4 +7,11 @@ export const Title = styled.h2`
     font-size: 48px;
     font-weight: 500;
     line-height: 120%;
+
+    @media ${theme.media.tablet}{
+        font-size: 31px;
+        width: 343px;
+        margin: 0 auto;
+        text-align: center;
+    }
 `

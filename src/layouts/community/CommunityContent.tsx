@@ -8,12 +8,12 @@ import { Button } from "../../components/Button";
 export const CommunityContent: React.FC = () => {
     return(
         <Content>
-            <CommunityTitle>Create And Sell Your <span>Best NFTs</span></CommunityTitle>
+            <CommunityTitle>Create And Sell <br/>Your <span>Best NFTs</span></CommunityTitle>
             <ContentText>Start exploring the world of digital art and NFTs today and take control of your digital assets with confidence!</ContentText>
-            <FlexWrapper gap="36px" align="center">
+            <ContentButtons gap="36px" align="center">
                 <Button>Create Now</Button>
                 <ContentLink>Learn more</ContentLink>
-            </FlexWrapper>
+            </ContentButtons>
         </Content>
     )
 }
@@ -26,6 +26,10 @@ const CommunityTitle = styled(Title)`
     span{
         color: ${theme.colors.accent};
     }
+
+    @media ${theme.media.desktopForCards}{
+        text-align: center;
+    }
 `
 
 const ContentText = styled.p`
@@ -33,6 +37,15 @@ const ContentText = styled.p`
     font-weight: 400;
     line-height: 160%;
     margin: 20px 0 40px;
+
+
+    @media ${theme.media.desktopForCards}{
+        text-align: center;
+    }
+
+    @media ${theme.media.tablet}{
+        margin: 20px 0 32px;
+    }
 `
 const ContentLink = styled.a`
     font-size: 16px;
@@ -44,5 +57,11 @@ const ContentLink = styled.a`
     &:hover{
         color: ${theme.colors.font};
         border-bottom: 1px solid ${theme.colors.accent};
+    }
+`
+
+const ContentButtons = styled(FlexWrapper)`
+    @media ${theme.media.desktopForCards}{
+        justify-content: center;
     }
 `
