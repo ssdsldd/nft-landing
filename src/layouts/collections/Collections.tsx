@@ -1,32 +1,19 @@
 import React from "react";
-import styled from "styled-components";
 import { Container } from "../../components/Container";
-import { FlexWrapper } from "../../components/FlexWrapper";
 import { CollectionContent } from "./CollectionContent";
 import { CollectionPhoto } from "./CollectionPhoto";
-import { theme } from "../../style/Theme";
+import { S } from "./Collections-Styles";
 
 export const Collections: React.FC = () => {
     return(
-        <StyledCollecions>
+        <S.StyledCollecions>
             <Container>
-                <CollectionsFlex justify="space-between" align="center" gap = "30px">
+                <S.CollectionsFlex justify="space-between" align="center" gap = "30px">
                     <CollectionPhoto/>
                     <CollectionContent/>
-                </CollectionsFlex>
+                </S.CollectionsFlex>
             </Container>
-        </StyledCollecions>
+        </S.StyledCollecions>
     )
 }
 
-const StyledCollecions = styled.section`
-    
-`
-
-const CollectionsFlex = styled(FlexWrapper)`
-    @media ${theme.media.desktop}{
-        flex-wrap: wrap;
-        gap: 110px;
-        justify-content: center;
-    }
-`

@@ -1,59 +1,20 @@
 import React from "react";
-import styled from "styled-components";
-import { theme } from "../../../style/Theme";
 import { MainContentButtons } from "./MainContentButtons";
-import { MainContentStatistic } from "./MainContentStatistic";
-import { font } from "../../../style/Font";
+import { S } from "./MainContent-Styles";
 
 export const MainContent: React.FC = () => {
     return(
-        <StyledMainContent>
-            <MainContnetTitle>
+        <S.StyledMainContent>
+            <S.MainContnetTitle>
               Discover and <br />Collect The Best <br />NFTs <span> Digital Art.</span>
-            </MainContnetTitle>
-            <MainContnetText>
+            </S.MainContnetTitle>
+            <S.MainContnetText>
                 Get started with the easiest and most secure platform to buy and trade digital ART and NFT’s. Start exploring the world of digital art and NFTs today and take control of your digital assets with confidence!
-            </MainContnetText>
+            </S.MainContnetText>
             <MainContentButtons/>
-        </StyledMainContent>
+        </S.StyledMainContent>
     )
 }
 
-const StyledMainContent = styled.div`
-    width: 544px;
-    grid-column: 1/2;
-    grid-row: 1/2;
-    @media ${theme.media.desktop}{
-        text-align: center;
-    }
-
-    @media ${theme.media.tablet}{
-        max-width: 343px;
-        padding-top: 20px;
-    }
-`
-
-const MainContnetTitle = styled.h1`
-    ${font({family: "'Canela-medium', sans-serif", weight: 500, Fmax: 64, Fmin: 39})}
-    line-height: 120%;
-    margin-bottom: 20px;
-    span{
-        color: ${theme.colors.accent};
-    }
-    @media ${theme.media.tablet}{
-        font-size: 39px;
-    }
-`
-
-const MainContnetText = styled.p`
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 160%;
-    margin-bottom: 40px;
-
-    @media ${theme.media.tablet}{
-        margin-bottom: 32px;
-    }
-`
 
 

@@ -1,7 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { FlexWrapper } from "../../components/FlexWrapper";
-import { theme } from "../../style/Theme";
+import { S } from "./Artists-Styles";
 
 type CardPropsType = {
     srcBg: string,
@@ -11,97 +9,15 @@ type CardPropsType = {
 
 export const ArtistsCard: React.FC<CardPropsType> = (props: CardPropsType) => {
     return(
-        <Card as={"a"} srcBg={props.srcBg} srcProfile={props.srcProfile} name={props.name} direction="column" justify="flex-end">
-            <CardProfile gap="12px">
-                <CardProfileImg src={props.srcProfile}/>
-                <CardProfileInfo>
-                    <CardProfileOwner>Owner</CardProfileOwner>
-                    <CardProfileName>{props.name}</CardProfileName>
-                </CardProfileInfo>
-            </CardProfile>
-        </Card>
+        <S.Card as={"a"} srcBg={props.srcBg} srcProfile={props.srcProfile} name={props.name} direction="column" justify="flex-end">
+            <S.CardProfile gap="12px">
+                <S.CardProfileImg src={props.srcProfile}/>
+                <S.CardProfileInfo>
+                    <S.CardProfileOwner>Owner</S.CardProfileOwner>
+                    <S.CardProfileName>{props.name}</S.CardProfileName>
+                </S.CardProfileInfo>
+            </S.CardProfile>
+        </S.Card>
     )
 }
 
-const Card = styled(FlexWrapper)<CardPropsType>`
-    border-radius: 16px;
-    padding: 24px;
-    width: 100%;
-    min-height: 310px;
-    background-image: linear-gradient(2deg, rgba(19, 30, 58, 0.92) 0%, rgba(19, 30, 58, 0.00) 94.62%), url(${props => props.srcBg});
-    background-color: lightgray;
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    &:nth-child(2){
-        grid-column: 2/4;
-
-        @media ${theme.media.desktopForCards}{
-            grid-column: 1/3;
-            grid-row: 2/3;
-        }
-    }
-
-    &:nth-child(3){
-        grid-column: 4/5;
-        grid-row: 1/3;
-
-        @media ${theme.media.desktopForCards}{
-            grid-column: 2/3;
-            grid-row: 1/2;
-        }
-    }
-
-    &:nth-child(4){
-        grid-column: 1/3;
-
-        @media ${theme.media.desktopForCards}{
-            grid-column: 1/2;
-            grid-row: 3/4;
-        }
-    }
-
-    &:nth-child(5){
-
-        @media ${theme.media.desktopForCards}{
-            grid-column: 2/3;
-            grid-row: 3/4;
-        }
-    }
-
-
-    @media ${theme.media.tablet}{
-        height: 450px;
-    }
-
-    @media ${theme.media.mobile}{
-        max-height: 356px;
-    }
-`
-
-const CardProfile = styled(FlexWrapper)`
-
-`
-const CardProfileImg = styled.img`
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-`
-
-const CardProfileInfo = styled.div`
-    
-`
-
-const CardProfileName = styled.span`
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 120%;
-`
-
-const CardProfileOwner = styled.span`
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 160%; 
-    margin-bottom: 4px;
-    display: block;
-`

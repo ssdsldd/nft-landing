@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import artistImg1 from "../../assets/popular/popular1.webp";
 import artistImg2 from "../../assets/popular/popular2.webp";
 import artistImg3 from "../../assets/popular/popular3.webp";
@@ -11,7 +10,7 @@ import ownerImg3 from "../../assets/popular/owner3.webp";
 import ownerImg4 from "../../assets/popular/owner4.webp";
 import ownerImg5 from "../../assets/popular/owner5.webp";
 import { ArtistsCard } from "./ArtistCard";
-import { theme } from "../../style/Theme";
+import { S } from "./Artists-Styles";
 
 
 const artistsItems = [
@@ -50,7 +49,7 @@ const artistsItems = [
 
 export const ArtistsGrid: React.FC = () => {
     return(
-        <StyledAGrid>
+        <S.StyledAGrid>
             {artistsItems.map((item, index) => {
                 return (
                     <ArtistsCard    srcBg={item.srcBg}
@@ -59,31 +58,7 @@ export const ArtistsGrid: React.FC = () => {
                                     key={index}/>
                 )
             })}
-        </StyledAGrid>
+        </S.StyledAGrid>
     )
 }
 
-const StyledAGrid = styled.div`
-    grid-column: 1/3;
-    grid-row: 2/3;
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: 300px 80px 410px 410px;
-    grid-template-rows: repeat(2, 1fr);
-
-    @media ${theme.media.desktopForCards}{
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 500px);
-    }
-
-    @media ${theme.media.tablet}{
-        /* max-width: 343px; */
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    @media ${theme.media.mobile}{
-        width: 100%;
-    }
-`

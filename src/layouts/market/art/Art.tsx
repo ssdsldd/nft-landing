@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-import { theme } from "../../../style/Theme";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Icon } from "../../../components/icon/Icon";
 import Countdown, {CountdownRenderProps } from "react-countdown";
-import { Button } from "../../../components/Button";
+import { S } from "./Art-Styles";
 
 type MarketArtProps = {
     src: string,
@@ -23,108 +21,28 @@ const CountdownRenderer: React.FC<CountdownRenderProps > = ({ hours, minutes, se
 
 export const MarketArt: React.FC<MarketArtProps> = (props: MarketArtProps) => {
     return(
-        <Art>
-            <ArtImageBox>
-                <ArtImage src={props.src}/> 
-            </ArtImageBox>
-            <ArtMainInfo justify="space-between">
-                <ArtTitle>{props.title}</ArtTitle>
-                <ArtPriceBox gap="4px" align="center">
+        <S.Art>
+            <S.ArtImageBox>
+                <S.ArtImage src={props.src}/> 
+            </S.ArtImageBox>
+            <S.ArtMainInfo justify="space-between">
+                <S.ArtTitle>{props.title}</S.ArtTitle>
+                <S.ArtPriceBox gap="4px" align="center">
                     <Icon iconId="eth" viewbox="0 0 24 24" width="24" height="24"/>
-                    <ArtPrice>{props.price}</ArtPrice>
-                </ArtPriceBox>
-            </ArtMainInfo>
+                    <S.ArtPrice>{props.price}</S.ArtPrice>
+                </S.ArtPriceBox>
+            </S.ArtMainInfo>
             <FlexWrapper justify="space-between">
-                    <ArtTimer>
-                        <ArtTimerTitle>Ending In</ArtTimerTitle>
-                        <ArtTimerBox gap="12px" align="center">
+                    <S.ArtTimer>
+                        <S.ArtTimerTitle>Ending In</S.ArtTimerTitle>
+                        <S.ArtTimerBox gap="12px" align="center">
                             <Icon iconId="clock2"  width="24" height="24" viewbox = "0 0 35 35"/>
                             <Countdown date={Date.now() + 80000000} renderer={CountdownRenderer}/>
-                        </ArtTimerBox>
-                    </ArtTimer>
-                    <ArtButton>Place A Bid</ArtButton>
+                        </S.ArtTimerBox>
+                    </S.ArtTimer>
+                    <S.ArtButton>Place A Bid</S.ArtButton>
             </FlexWrapper>
-        </Art>
+        </S.Art>
     )
 }
 
-const Art = styled.div`
-    border-radius: 28px;
-    border-top: 1px solid ${theme.colors.accent};
-    background: #131E3A;
-    padding: 20px;
-
-    @media ${theme.media.tablet}{
-        padding: 16px;
-        border-radius: 24px;
-    }
-`
-
-const ArtImageBox = styled.div`
-    overflow: hidden;
-    border-radius: 16px;
-    height: 340px;
-`
-
-const ArtImage = styled.img`
-    width: 370px;
-    height: 340px;
-    object-fit: cover;
-    object-position: top;
-
-    @media ${theme.media.tablet}{
-        width: 310px;
-        transform: scale(1.2) translateY(20px);
-        object-position: top;
-    }
-`
-
-const ArtTitle = styled.a`
-    @media ${theme.media.tablet}{
-        font-size: 20px;
-    }
-`
-
-const ArtPrice = styled.span`
-    font-size: 16px;
-`
-
-const ArtMainInfo = styled(FlexWrapper)`
-    margin: 18px 0 24px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 120%;
-`
-
-const ArtPriceBox = styled(FlexWrapper)`
-    
-`
-
-const ArtTimer = styled.div`
-
-`
-
-const ArtTimerBox = styled(FlexWrapper)`
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 120%;
-`
-
-const ArtTimerTitle = styled.span`
-    font-size: 14px;
-    display: inline-block;
-    font-weight: 400;
-    line-height: 160%;
-    margin-bottom: 4px;
-`
-const ArtButton = styled(Button)`
-    background-color: transparent;
-    border: 1px solid ${theme.colors.accent};
-    color: ${theme.colors.accent};
-    transition: ${theme.animation.transition};
-    &:hover{
-        border: 1px solid transparent;
-        background-color: ${theme.colors.accent};
-        color: ${theme.colors.accentFont};
-    }
-`
