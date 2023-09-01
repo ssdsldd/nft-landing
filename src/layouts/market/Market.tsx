@@ -37,25 +37,24 @@ export const Market: React.FC = () => {
     return(
         <StyledMarket>
             <Container>
-                <FlexWrapper justify="space-between" align="center">
+                <MarketWrapper>
                     <MarketTitle><span>Amazing</span> and Super <br /> Unique Art of This <span>Week</span></MarketTitle>
-                    <DesktopButton>See All</DesktopButton>
-                </FlexWrapper>
-                <MarketArts justify="space-around" gap="30px" wrap="wrap">
-                    {artItems.map((item, index) => {
-                        return(
-                            <MarketArt  src={item.src}
-                                        title={item.title}
-                                        price={item.price}
-                                        date={item.date}
-                                        key={index}/>
-                        )
-                    })}
-                    <MarketArtsBg></MarketArtsBg>
-                </MarketArts>
-                <MobileButton>
-                    See All
-                </MobileButton>
+    
+                    <MarketArts justify="space-around" gap="30px" wrap="wrap">
+                        {artItems.map((item, index) => {
+                            return(
+                                <MarketArt  src={item.src}
+                                            title={item.title}
+                                            price={item.price}
+                                            date={item.date}
+                                            key={index}/>
+                            )
+                        })}
+                        <MarketArtsBg></MarketArtsBg>
+                    </MarketArts>
+
+                    <MarketButton>See All</MarketButton>
+                </MarketWrapper>
             </Container>
         </StyledMarket>
     )
@@ -65,19 +64,33 @@ const StyledMarket = styled.section`
 
 `
 
+const MarketWrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 134px;
+    grid-template-rows: 1fr, 1fr;
+    align-items: center;
+    grid-row-gap: 64px;
+
+    @media ${theme.media.tablet}{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+    }
+`
+
 const MarketTitle = styled(Title)`
+    grid-column: 1/2;
+    grid-row: 1/2;
     span{
         color: ${theme.colors.accent};
     }
 `
 
 const MarketArts = styled(FlexWrapper)`
-    margin-top: 64px;
     position: relative;
-
-    @media ${theme.media.tablet}{
-        margin-top: 32px;
-    }
+    grid-column: 1/3;
+    grid-row: 2/3;
 `
 
 const MarketArtsBg = styled.div`
@@ -94,20 +107,10 @@ const MarketArtsBg = styled.div`
         display: none;
     }
 `
-
-const DesktopButton = styled(Button)`
-    @media ${theme.media.tablet}{
-        display: none;
-    }
-`
-
-const MobileButton = styled(Button)`
-    display: none;
-    margin: 0 auto;
-    max-width: 134px;
+const MarketButton = styled(Button)`
     padding: 12px 0;
-    margin-top: 32px;
+
     @media ${theme.media.tablet}{
-        display: block;
+        padding: 12px 40px;
     }
 `

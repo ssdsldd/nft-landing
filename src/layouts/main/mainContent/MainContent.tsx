@@ -3,24 +3,26 @@ import styled from "styled-components";
 import { theme } from "../../../style/Theme";
 import { MainContentButtons } from "./MainContentButtons";
 import { MainContentStatistic } from "./MainContentStatistic";
+import { font } from "../../../style/Font";
 
 export const MainContent: React.FC = () => {
     return(
         <StyledMainContent>
             <MainContnetTitle>
-              Discover and Collect The Best NFTs <span> Digital Art.</span>
+              Discover and <br />Collect The Best <br />NFTs <span> Digital Art.</span>
             </MainContnetTitle>
             <MainContnetText>
                 Get started with the easiest and most secure platform to buy and trade digital ART and NFT’s. Start exploring the world of digital art and NFTs today and take control of your digital assets with confidence!
             </MainContnetText>
             <MainContentButtons/>
-            <MainContentStatistic/>
         </StyledMainContent>
     )
 }
 
 const StyledMainContent = styled.div`
-    max-width: 544px;
+    width: 544px;
+    grid-column: 1/2;
+    grid-row: 1/2;
     @media ${theme.media.desktop}{
         text-align: center;
     }
@@ -32,9 +34,7 @@ const StyledMainContent = styled.div`
 `
 
 const MainContnetTitle = styled.h1`
-    font-family: "Canela-medium", sans-serif;
-    font-size: 64px;
-    font-weight: 500;
+    ${font({family: "'Canela-medium', sans-serif", weight: 500, Fmax: 64, Fmin: 39})}
     line-height: 120%;
     margin-bottom: 20px;
     span{

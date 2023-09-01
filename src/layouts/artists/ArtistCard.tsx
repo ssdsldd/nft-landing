@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { FlexWrapper } from "../../components/FlexWrapper";
+import { theme } from "../../style/Theme";
 
 type CardPropsType = {
     srcBg: string,
@@ -34,15 +35,47 @@ const Card = styled(FlexWrapper)<CardPropsType>`
     background-repeat: no-repeat;
     &:nth-child(2){
         grid-column: 2/4;
+
+        @media ${theme.media.desktopForCards}{
+            grid-column: 1/3;
+            grid-row: 2/3;
+        }
     }
 
     &:nth-child(3){
         grid-column: 4/5;
         grid-row: 1/3;
+
+        @media ${theme.media.desktopForCards}{
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
     }
 
     &:nth-child(4){
         grid-column: 1/3;
+
+        @media ${theme.media.desktopForCards}{
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+    }
+
+    &:nth-child(5){
+
+        @media ${theme.media.desktopForCards}{
+            grid-column: 2/3;
+            grid-row: 3/4;
+        }
+    }
+
+
+    @media ${theme.media.tablet}{
+        height: 450px;
+    }
+
+    @media ${theme.media.mobile}{
+        max-height: 356px;
     }
 `
 

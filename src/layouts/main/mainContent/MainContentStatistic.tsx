@@ -42,8 +42,13 @@ export const MainContentStatistic: React.FC = () => {
 const Statistic = styled.ul`
     list-style: none;
     text-align: start;
+
     @media ${theme.media.desktop}{
-        display: none;
+        margin-top: 76px;
+    }
+
+    @media ${theme.media.tablet}{
+        gap: 28px;
     }
 `
 
@@ -65,6 +70,10 @@ const StatisticValue = styled.span`
     margin-bottom: 8px;
     span{
         color: ${theme.colors.font};
+    }
+
+    @media ${theme.media.tablet}{
+        font-size: 31px;
     }
 `
 

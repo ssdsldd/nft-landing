@@ -16,12 +16,13 @@ export const CommunityPhoto: React.FC = () => {
 }
 
 const Photos = styled.div`
-    width: 740px;
+    max-width: 740px;
+    width: 100%;
     height: 560px;
     position: relative;
 
     @media ${theme.media.tablet}{
-        width: 343px;
+        max-width: 343px;
         height: 260px;
     }
 `
@@ -30,52 +31,49 @@ const PhotosTop = styled.img`
     position: absolute;
     top: 160px;
     left: 0;
-    width: 410px;
-    height: 400px;
+    max-width: 410px;
+    width: 100%;
+    max-height: 400px;
     object-fit: cover;
     z-index: -1;
     border-radius: 24px;
     object-position: top;
 
     @media ${theme.media.tablet}{
-        width: 190px;
-        height: 186px;
+        max-width: 190px;
+        max-height: 186px;
         top: 74px;
     }
 `
 const PhotosBottom = styled.img`
     position: absolute;
-    right: 0;
+    right: 0px;
     top: 0;
-    width: 410px;
-    height: 400px;
+    max-width: 410px;
+    width: 100%;
+    max-height: 475px;
     object-fit: cover;
     object-position: top;
     z-index: -2;
     border-radius: 24px;
 
     @media ${theme.media.tablet}{
-        width: 190px;
-        height: 220px;
+        max-width: 190px;
+        max-height: 220px;
     }
 `
 
 const PhotosBg = styled.div`
     position: absolute;
-    top: 410px;
-    right: -30px;
+    bottom: -45px;
+    right: -20px;
     z-index: -4;
     width: 346px;
     height: 128px;
     background: #1F413D;
-    /* filter: blur(125px); */
+    filter: blur(125px);
     @media ${theme.media.desktopBg}{
-        display: none;
-    }
-
-    @media ${theme.media.tablet}{
-        display: block;
-        background-color: #fff;
+        filter: blur(60px);
         width: 166px;
         height: 83px;
         bottom: -40px;

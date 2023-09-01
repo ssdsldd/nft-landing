@@ -8,7 +8,7 @@ import { theme } from "../../../style/Theme";
 export const MainPhoto: React.FC = () => {
     return(
         <StyledMainPhoto>
-            <MainPhotoImg src={mainPhoto}/>
+            <MainPhotoImg src={mainPhoto}/> 
             <MainPhotoiconBig>
                 <Icon iconId="main" width="171" height="171" viewbox="0 0 171 171"/>
             </MainPhotoiconBig>
@@ -25,7 +25,9 @@ export const MainPhoto: React.FC = () => {
 const StyledMainPhoto = styled.div`
     margin-right: 50px;
     position: relative;
-    @media ${theme.media.tablet}{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    @media ${theme.media.desktop}{
         margin-right: 0px;
     }
 `
@@ -51,7 +53,7 @@ const MainPhotoiconBig = styled.div`
     z-index: 2;
 
 
-    @media ${theme.media.desktopForCards}{
+    @media ${theme.media.tablet}{
         display: none;
     }
 `
@@ -63,7 +65,7 @@ const MainPhotoiconSmall = styled.div`
     z-index: 2;
     display: none;
 
-    @media ${theme.media.desktopForCards}{
+    @media ${theme.media.tablet}{
         display: block;
     }
 `

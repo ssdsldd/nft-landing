@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "../../components/Container";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import styled from "styled-components";
+import { theme } from "../../style/Theme";
 
 export const FooterCopyright: React.FC = () => {
     return(
@@ -19,7 +20,16 @@ const Copyright = styled(FlexWrapper)`
     font-size: 16px;
     font-weight: 400;
     line-height: 160%;
+
+    @media ${theme.media.tablet}{
+        flex-direction: column;
+        gap: 16px;
+    }
 `
 
 const Privacy = styled(FlexWrapper)`
+    @media ${theme.media.tablet}{
+        flex-direction: column;
+        gap: 16px;
+    }
 `

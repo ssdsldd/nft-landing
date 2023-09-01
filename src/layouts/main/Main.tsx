@@ -1,21 +1,20 @@
 import React from "react";
 import { Container } from "../../components/Container";
-import { FlexWrapper } from "../../components/FlexWrapper";
 import styled from "styled-components";
 import { MainContent } from "./mainContent/MainContent";
 import { MainPhoto } from "./MainPhoto/MainPhoto";
 import { theme } from "../../style/Theme";
-import { MainContentStatisticMobile } from "./mainContent/MainContentStatisticMobile";
+import { MainContentStatistic } from "./mainContent/MainContentStatistic";
 
 export const Main: React.FC = () => {
     return(
         <StyledMain>
             <Container>
-                <MainFlexWrapper justify="space-between" wrap="wrap">
+                <MainWrapper>
                     <MainContent/>
                     <MainPhoto/>
-                    <MainContentStatisticMobile/>
-                </MainFlexWrapper>
+                    <MainContentStatistic/>
+                </MainWrapper>
             </Container>
         </StyledMain>
     )
@@ -25,11 +24,17 @@ const StyledMain = styled.section`
     
 `
 
-const MainFlexWrapper = styled(FlexWrapper)`
+const MainWrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr;
+    justify-content: space-between;
+
     @media ${theme.media.desktop}{
+        display: flex;
         flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        justify-content: center;
         gap: 48px;
     }
 `

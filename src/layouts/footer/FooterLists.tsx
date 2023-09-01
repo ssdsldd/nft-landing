@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "../../components/FlexWrapper";
+import { theme } from "../../style/Theme";
 
 const sections = [
     {
@@ -26,7 +27,7 @@ const sections = [
 
 export const FooterLists: React.FC = () => {
     return(
-            <Lists gap = "94px">
+            <Lists gap = "94px" wrap="wrap">
                 {sections.map((item,index) => {
                     return(
                         <ListsList key={index}>
@@ -48,7 +49,9 @@ export const FooterLists: React.FC = () => {
 }
 
 const Lists = styled(FlexWrapper)`
-
+    @media ${theme.media.tablet}{
+        row-gap: 32px;
+    }
 `
 
 const ListsList = styled.ul`
